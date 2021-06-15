@@ -7,14 +7,18 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:meetup/Helper/Colors.dart';
 import 'package:meetup/Helper/helper.dart';
-import 'package:meetup/Helper/userdetails.dart';
 import 'package:meetup/Widgets/widgethelper.dart';
 import 'package:meetup/interestselector.dart';
+import 'package:meetup/login.dart';
+import 'package:meetup/onboardScreen.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:shimmer/shimmer.dart';
 
+
+
 Future<void> main() async {
+
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
       statusBarColor: bgcolor, statusBarIconBrightness: Brightness.light));
   WidgetsFlutterBinding.ensureInitialized();
@@ -41,18 +45,17 @@ class MyApp extends StatelessWidget {
               primaryColor: Colors.black,
               accentColor: Colors.black,
               buttonColor: Colors.grey,
-             // appBarTheme: AppBarTheme(brightness: Brightness.light),
-              appBarTheme: Theme.of(context)
-                  .appBarTheme
-                  .copyWith(brightness: Brightness.dark)
+              // appBarTheme: AppBarTheme(brightness: Brightness.light),
+              appBarTheme: Theme.of(context).appBarTheme.copyWith(brightness: Brightness.dark)
               ),
           debugShowCheckedModeBanner: false,
-          home: SplashScreen());
-  
-  }
+          home: MeetUp.prefs.getString("uid") == null ? 
+          SplashScreen() : Home());
+    }
 }
 
 class SplashScreen extends StatefulWidget {
+  
   const SplashScreen({key}) : super(key: key);
 
   @override
@@ -121,7 +124,7 @@ class _SplashScreenState extends State<SplashScreen> {
                   GestureDetector(
                     onTap: () {
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (b) => interest()));
+                          MaterialPageRoute(builder: (b) => Login()));
                     },
                     child: Container(
                       height: 43,

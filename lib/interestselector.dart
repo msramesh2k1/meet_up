@@ -265,7 +265,7 @@ class _interestState extends State<interest> {
                      onTap: (){  
                       //  print(userinterest);
                       Navigator.push(context,MaterialPageRoute(builder: (b)=>Home(
-                        // interestlist: userinterest,
+                    
                        
                         
                         )));
