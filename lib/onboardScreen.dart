@@ -9,6 +9,8 @@ import 'package:meetup/chatScreen.dart';
 import 'package:tcard/tcard.dart';
 import 'package:animated_icon_button/animated_icon_button.dart';
 
+import 'ChatRoom.dart';
+
 class Home extends StatefulWidget {
 
   const Home({Key key}) : super(key: key);
@@ -110,11 +112,11 @@ class _HomeState extends State<Home> {
                                 Colors.white),
                           ],
                         ),
-                      ),
+                    ),
                     ],
-                  ),
+                    ),
                   SizedBox(height: 10,),
-                    Row(
+                  Row(
                       children: [
                         SizedBox(width: 10,)
 ,                        Container(
@@ -396,11 +398,11 @@ class _HomeState extends State<Home> {
                                                             Navigator.push(context, MaterialPageRoute(builder: (b)
                                                             =>
                                                          chat(
-                                                              receivername: idname,
+                              //                                 receivername: idname,
                                                              
                                
-                               counter: counter,
-                                query: FirebaseFirestore.instance.collection("users").get(),
+                              //  counter: counter,
+                              //   query: FirebaseFirestore.instance.collection("users").get(),
 
 
                               ) ));

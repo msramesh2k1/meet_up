@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:google_fonts/google_fonts.dart';
+import 'package:meetup/Pages/LoginScreen.dart';
 
 import 'login.dart';
 class ConfirmEmail extends StatelessWidget {
@@ -41,7 +42,7 @@ class ConfirmEmail extends StatelessWidget {
                          onTap: ()
                          {
                             Navigator.push(context,
-                                        MaterialPageRoute(builder: (context) => Login()));
+                                        MaterialPageRoute(builder: (context) => LoginScreen()));
                                  
                          },
                          child: Padding(
